@@ -22,7 +22,7 @@ const components = [
 const variants = {
     enter: (direction) => {
         return {
-            x: direction > 0 ? 1000 : -1000,
+            x: direction > 0 ? "100%" : "-100%",
             opacity: 0,
             transition: {
                 duration: 1,
@@ -37,7 +37,7 @@ const variants = {
     },
     exit: (direction) => {
         return {
-            x: direction < 0 ? 1000 : -1000,
+            x: direction < 0 ? "100%" : "-100%",
             opacity: 0,
             transition: {
                 duration: 0.4,
@@ -104,7 +104,7 @@ export default function ComponentSlider() {
     
     useEffect(() => {
         const timer =
-            counter < 100 ? setInterval(() => setCounter(counter + 1), 100) : paginate(1);;
+            counter < 100 ? setInterval(() => setCounter(counter + 1), 10000) : paginate(1);;
 
         return () => clearInterval(timer);
     }, [counter]);
